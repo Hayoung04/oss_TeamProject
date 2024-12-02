@@ -11,7 +11,6 @@ const ApiListPage = () => {
     method: "",
   });
 
-  // oss 파이팅
   useEffect(() => {
     const fetchInitialData = async () => {
       try {
