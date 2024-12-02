@@ -12,6 +12,7 @@ const ApiDetailPage = () => {
   return (
     <div className="detailContainer">
       <h1>{lecture.title}</h1>
+      <h1>{lecture.title}</h1> {/* 수정 */}
       <p>
         <strong>대상:</strong> {lecture.target}
       </p>
