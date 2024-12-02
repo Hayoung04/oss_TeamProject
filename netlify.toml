@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/api/*" 
+  to = "http://openapi.seoul.go.kr:8088/6941464777676b6433336c77696e71/xml/SeoulLibraryLectureInfo/:splat"
+  status = 200
+  force = true
