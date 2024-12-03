@@ -5,6 +5,7 @@ import MockListPage from "./Pages/MockListPage";
 import ApiDetailPage from "./Pages/ApiDetailPage";
 import MockAddPage from "./Pages/MockAddPage";
 import MockUpdatePage from "./Pages/MockUpdatePage";
+import MockDetailPage from "./Pages/MockDetailPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/apidetail" element={<ApiDetailPage />} />
         <Route path="/mockadd" element={<MockAddPage />} />
         <Route path="/mockupdate" element={<MockUpdatePage />} />
+        <Route path="/mockdetail" element={<MockDetailPage />} />
       </Routes>
     </BrowserRouter>
   );
