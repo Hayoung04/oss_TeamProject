@@ -16,8 +16,8 @@ function App() {
         <Route path="/apilist" element={<ApiListPage />} />
         <Route path="/apidetail" element={<ApiDetailPage />} />
         <Route path="/mockadd" element={<MockAddPage />} />
-        <Route path="/mockupdate" element={<MockUpdatePage />} />
-        <Route path="/mockdetail" element={<MockDetailPage />} />
+        <Route path="/mockupdate/:title" element={<MockUpdatePage />} />
+        <Route path="/mockdetail/:title" element={<MockDetailPage />} />
       </Routes>
     </BrowserRouter>
   );
