@@ -20,6 +20,7 @@ const MockListPage = ({ books }) => {
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <a href="/mockadd"><button>Add</button></a>
       <h1>Book List</h1>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {books.map((book) => (
