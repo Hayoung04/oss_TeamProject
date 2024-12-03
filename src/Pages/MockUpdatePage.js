@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import './MockAddPage.css';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-const MockAddPage = () => {
+const Update = () => {
+  const { title } = useParams();
   const [book, setBook] = useState({
     title: "",
     author: "",
@@ -13,6 +15,24 @@ const MockAddPage = () => {
     recommendation: "",
   });
 
+  useEffect(() => {
+    axios
+      .get(`https://674853885801f51535905794.mockapi.io/books`)
+      .then((response) => {
+        const foundBook = response.data.find(
+          (book) => book.title === decodeURIComponent(title)
+        );
+        if (foundBook) {
+          setBook(foundBook);
+        } else {
+          console.error("도서를 찾을 수 없습니다.");
+        }
+      })
+      .catch((error) => {
+        console.error("도서를 가져오는중 에러가 발생했습니다:", error);
+      });
+  }, [title]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setBook({ ...book, [name]: value });
@@ -20,44 +40,22 @@ const MockAddPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const {
-      title,
-      author,
-      publisher,
-      publicationDate,
-    } = book;
-
-    if (!title || !author || !publisher || !publicationDate) {
-      alert("제목, 저자, 출판사 그리고 발행년도는 필수 항목입니다. 모든 항목을 작성해 주세요.");
-      return;
-    }
-
-    fetch("https://674853885801f51535905794.mockapi.io/books", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(book),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("오류가 발생하였습니다. 다시한번 입력해주세요.");
-        }
-        return response.json();
-      })
+    axios
+      .put(`https://674853885801f51535905794.mockapi.io/books/${book.id}`, book)
       .then(() => {
-        alert("도서가 정상적으로 추가되었습니다!");
-        window.location.href = "/";
+        alert("도서 정보가 성공적으로 수정되었습니다!");
+        window.location.href = "/mocklist";
       })
-      .catch((err) => alert(err.message));
+      .catch((error) => {
+        console.error("도서를 수정하는중 에러가 발생했습니다:", error);
+        alert("도서 정보를 수정하는 데 실패하였습니다.");
+      });
   };
 
   return (
     <div>
-      <h1>도서 추가</h1>
+      <h3>도서 수정</h3>
       <form onSubmit={handleSubmit}>
-
         <label>제목</label><br />
         <input type="text" name="title" value={book.title} onChange={handleChange} /><br /><br />
 
@@ -82,16 +80,15 @@ const MockAddPage = () => {
         <label>추천 글</label><br />
         <textarea name="recommendation" value={book.recommendation} onChange={handleChange} /><br /><br />
 
-        <button type="submit">추가</button>
+        <button type="submit">수정</button>
         <button>
-          <a href="/">
+          <a href="/mocklist">
             취소
           </a>
         </button>
-
       </form>
     </div>
   );
 };
 
-export default MockAddPage;
+export default Update;
