@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ShowList = () => {
   const [books, setBooks] = useState([]);
@@ -20,12 +21,16 @@ const MockListPage = ({ books }) => {
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <a href="/mockadd"><button>Add</button></a>
       <h1>Book List</h1>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {books.map((book) => (
           <li key={book.id} style={{ marginBottom: "30px" }}>
             <img src={book.image} alt={book.title} width="100" />
-            <p>{book.num}. {book.title}</p>
+            {/* <p>{book.num}. {book.title}</p> */}
+            <Link to={`/mockdetail/${encodeURIComponent(book.title)}`}>
+              <h3>{book.title}</h3>
+            </Link>
             <p>저자 : {book.author}</p>
             <p>출판사 : {book.publisher}</p>
             <p>발행년도 : {book.publicationDate}</p>
