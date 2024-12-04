@@ -1,4 +1,82 @@
-a {
+.updateOuterDiv {
+    max-width: 600px;
+    width: 80%;
+    height: 650px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #efcb00;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.updateInnerDiv {
+    width: 100%;
+    padding: 0;
+}
+
+#updateHeading {
+    text-align: center;
+    text-align: center;
+    margin: 40px;
+}
+
+#updateCancelButton {
     text-decoration: none;
     color: inherit;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#updateButtons {
+    padding: 8px 15px;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#updateButtons:hover {
+    background-color: #cdcdcd;
+}
+
+#updateTable {
+    margin: auto;
+}
+
+#updateTd {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+#updateLabel {
+    display: inline-block;
+    margin-bottom: 7px;
+    font-size: larger;
+}
+
+#updateInput {
+    width: 200px;
+    height: 25px;
+    font-size: large;
+}
+
+input#updateImage {
+    width: 470px;
+    height: 25px;
+    font-size: large;
+}
+
+#updateTextarea {
+    width: 470px;
+    height: 60px;
+    resize: vertical;
+    overflow: auto;
+    font-size: large;
 }

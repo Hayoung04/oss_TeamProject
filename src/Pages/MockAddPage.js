@@ -56,61 +56,59 @@ const MockAddPage = () => {
 
   return (
     <>
-      <h1>도서 추가</h1>
-      <div class="outerDiv">
-        <div class="innerDiv">
+      <h1 id="addHeading">도서 추가</h1>
+      <div class="addOuterDiv">
+        <div class="addInnerDiv">
           <form onSubmit={handleSubmit}>
 
-            <table>
+            <table id="addTable">
               <tr>
-                <td>
-                  <label>제목</label><br />
-                  <input type="text" name="title" value={book.title} onChange={handleChange} /><br /><br />
+                <td id="addTd">
+                  <label id="addLabel">제목</label><br />
+                  <input id="addInput" type="text" name="title" value={book.title} onChange={handleChange} /><br /><br />
                 </td>
-                <td>
-                  <label>저자</label><br />
-                  <input type="text" name="author" value={book.author} onChange={handleChange} /><br /><br />
+                <td id="addTd">
+                  <label id="addLabel">저자</label><br />
+                  <input id="addInput" type="text" name="author" value={book.author} onChange={handleChange} /><br /><br />
                 </td>
               </tr>
 
               <tr>
-                <td>
-                  <label>출판사</label><br />
-                  <input type="text" name="publisher" value={book.publisher} onChange={handleChange} /><br /><br />
+                <td id="addTd">
+                  <label id="addLabel">출판사</label><br />
+                  <input id="addInput" type="text" name="publisher" value={book.publisher} onChange={handleChange} /><br /><br />
                 </td>
-                <td>
-                  <label>발행년도</label><br />
-                  <input type="text" name="publicationDate" value={book.publicationDate} onChange={handleChange} /><br /><br />
+                <td id="addTd">
+                  <label id="addLabel">발행년도</label><br />
+                  <input id="addInput" type="text" name="publicationDate" value={book.publicationDate} onChange={handleChange} /><br /><br />
                 </td>
               </tr>
 
               <tr>
-                <td>
-                  <label>청구기호</label><br />
-                  <input type="text" name="callNumber" value={book.callNumber} onChange={handleChange} /><br /><br />
-
+                <td id="addTd">
+                  <label id="addLabel">청구기호</label><br />
+                  <input id="addInput" type="text" name="callNumber" value={book.callNumber} onChange={handleChange} /><br /><br />
                 </td>
-                <td>
-                  <label>분류 기준</label><br />
-                  <input type="text" name="classificationCriteria" value={book.classificationCriteria} onChange={handleChange} /><br /><br />
-
+                <td id="addTd">
+                  <label id="addLabel">분류 기준</label><br />
+                  <input id="addInput" type="text" name="classificationCriteria" value={book.classificationCriteria} onChange={handleChange} /><br /><br />
                 </td>
               </tr>
 
-              <tr><td colspan="2">
-                <label>사진 URL</label><br />
-                <input type="text" name="image" id="image" value={book.image} onChange={handleChange} /><br /><br />
+              <tr><td id="addTd" colspan="2">
+                <label id="addLabel">사진 URL</label><br />
+                <input type="text" name="addImage" id="addImage" value={book.image} onChange={handleChange} /><br /><br />
               </td></tr>
 
-              <tr><td colspan="2">
-                <label>추천 글</label><br />
-                <textarea name="recommendation" value={book.recommendation} onChange={handleChange} /><br /><br />
+              <tr><td id="addTd" colspan="2">
+                <label id="addLabel">추천 글</label><br />
+                <textarea id="addTextarea" name="recommendation" value={book.recommendation} onChange={handleChange} /><br /><br />
               </td></tr>
             </table>
 
             <div class="button-container">
-              <button type="submit">추가</button>
-              <button><a href="/">취소</a></button>
+              <button id="addButtons" type="submit">추가</button>
+              <button id="addButtons"><a id="addCancelButton" href="/">취소</a></button>
             </div>
 
           </form>

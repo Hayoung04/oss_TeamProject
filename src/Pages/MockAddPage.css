@@ -1,4 +1,4 @@
-.outerDiv {
+.addOuterDiv {
     max-width: 600px;
     width: 80%;
     height: 650px;
@@ -8,19 +8,21 @@
     align-items: center;
     border: 5px solid #efcb00;
     border-radius: 10px;
+    font-size: large;
 }
 
-.innerDiv {
+.addInnerDiv {
     width: 100%;
     padding: 0;
 }
 
-
-h1 {
+#addHeading {
     text-align: center;
+    text-align: center;
+    margin: 40px;
 }
 
-a {
+#addCancelButton {
     text-decoration: none;
     color: inherit;
 }
@@ -31,7 +33,7 @@ a {
     gap: 10px;
 }
 
-button {
+#addButtons {
     padding: 8px 15px;
     font-size: medium;
     border: none;
@@ -39,48 +41,42 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+#addButtons:hover {
     background-color: #cdcdcd;
 }
 
-table {
+#addTable {
     margin: auto;
 }
 
-td {
+#addTd {
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 10px;
 }
 
-label {
+#addLabel {
     display: inline-block;
     margin-bottom: 7px;
     font-size: larger;
 }
 
-input {
+#addInput {
     width: 200px;
     height: 25px;
+    font-size: large;
 }
 
-input#image {
+input#addImage {
     width: 470px;
     height: 25px;
+    font-size: large;
 }
 
-textarea {
+#addTextarea {
     width: 470px;
     height: 60px;
     resize: vertical;
     overflow: auto;
-}
-
-h1 {
-    text-align: center;
-    margin: 40px;
-}
-
-body {
     font-size: large;
 }
