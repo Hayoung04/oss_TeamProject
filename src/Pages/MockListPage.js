@@ -26,9 +26,8 @@ const MockListPage = ({ books }) => {
       <ul style={{ listStyle: "none", padding: 0 }}>
         {books.map((book) => (
           <li key={book.id} style={{ marginBottom: "30px" }}>
-            <img src={book.image} alt={book.title} width="100" />
-            {/* <p>{book.num}. {book.title}</p> */}
             <Link to={`/mockdetail/${encodeURIComponent(book.title)}`}>
+              <img src={book.image} alt={book.title} width="100" />
               <h3>{book.title}</h3>
             </Link>
             <p>저자 : {book.author}</p>
