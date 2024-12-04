@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import Search from "../Components/apiListPage/Search";
 import List from "../Components/apiListPage/List";
+import "./ApiListPage.css";
 
 const ApiListPage = () => {
   const [lectures, setLectures] = useState([]);
@@ -10,6 +12,8 @@ const ApiListPage = () => {
     personRange: "",
     method: "",
   });
+
+  const location = useLocation();
 
   useEffect(() => {
     const fetchInitialData = async () => {
@@ -101,34 +105,50 @@ const ApiListPage = () => {
 
   return (
     <div>
-      <Search onSearch={handleSearch} />
-      <div className="filterContainer">
-        <div>
-          <label>모집 인원:</label>
-          <select
-            onChange={(e) => handleFilterChange("personRange", e.target.value)}
-          >
-            <option value="">전체</option>
-            <option value="0-20">0~20명</option>
-            <option value="21-40">21~40명</option>
-            <option value="41-60">41~60명</option>
-            <option value="61-80">61~80명</option>
-          </select>
+      <div className="section">
+        <div
+          className={`tab ${location.pathname === "/" ? "active" : "inactive"}`}
+        >
+          <Link to="/">도서 목록</Link>
         </div>
-        <div>
-          <label>모집 방법:</label>
-          <select
-            onChange={(e) => handleFilterChange("method", e.target.value)}
-          >
-            <option value="">전체</option>
-            <option value="사전신청">사전 신청</option>
-            <option value="선착순">선착순</option>
-            <option value="홈페이지 접수">홈페이지 접수</option>
-            <option value="현장 접수 가능">현장 접수 가능</option>
-          </select>
+        <div
+          className={`tab ${
+            location.pathname === "/apilist" ? "active" : "inactive"
+          }`}
+        >
+          <Link to="/apilist">도서관 강좌</Link>
         </div>
       </div>
-      <List lectures={filteredLectures} />
+      <div className="boxContainer">
+        <Search onSearch={handleSearch} />
+        <div className="filterContainer">
+          <div className="person">
+            <select
+              onChange={(e) =>
+                handleFilterChange("personRange", e.target.value)
+              }
+            >
+              <option value="">모집 인원</option>
+              <option value="0-20">0~20명</option>
+              <option value="21-40">21~40명</option>
+              <option value="41-60">41~60명</option>
+              <option value="61-80">61~80명</option>
+            </select>
+          </div>
+          <div className="method">
+            <select
+              onChange={(e) => handleFilterChange("method", e.target.value)}
+            >
+              <option value="">모집 방법</option>
+              <option value="사전신청">사전 신청</option>
+              <option value="선착순">선착순</option>
+              <option value="홈페이지 접수">홈페이지 접수</option>
+              <option value="현장 접수 가능">현장 접수 가능</option>
+            </select>
+          </div>
+        </div>
+        <List lectures={filteredLectures} />
+      </div>
     </div>
   );
 };
