@@ -44,7 +44,7 @@ const Update = () => {
       .put(`https://674853885801f51535905794.mockapi.io/books/${book.id}`, book)
       .then(() => {
         alert("도서 정보가 성공적으로 수정되었습니다!");
-        window.location.href = "/mocklist";
+        window.location.href = "/";
       })
       .catch((error) => {
         console.error("도서를 수정하는중 에러가 발생했습니다:", error);
