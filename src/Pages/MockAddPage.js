@@ -26,10 +26,11 @@ const MockAddPage = () => {
       author,
       publisher,
       publicationDate,
+      image,
     } = book;
 
-    if (!title || !author || !publisher || !publicationDate) {
-      alert("제목, 저자, 출판사 그리고 발행년도는 필수 항목입니다. 모든 항목을 작성해 주세요.");
+    if (!title || !author || !publisher || !publicationDate || !image) {
+      alert("제목, 저자, 출판사, 발행년도 그리고 이미지는 필수 항목입니다. 모든 항목을 작성해 주세요.");
       return;
     }
 
@@ -54,43 +55,68 @@ const MockAddPage = () => {
   };
 
   return (
-    <div>
+    <>
       <h1>도서 추가</h1>
-      <form onSubmit={handleSubmit}>
+      <div class="outerDiv">
+        <div class="innerDiv">
+          <form onSubmit={handleSubmit}>
 
-        <label>제목</label><br />
-        <input type="text" name="title" value={book.title} onChange={handleChange} /><br /><br />
+            <table>
+              <tr>
+                <td>
+                  <label>제목</label><br />
+                  <input type="text" name="title" value={book.title} onChange={handleChange} /><br /><br />
+                </td>
+                <td>
+                  <label>저자</label><br />
+                  <input type="text" name="author" value={book.author} onChange={handleChange} /><br /><br />
+                </td>
+              </tr>
 
-        <label>저자</label><br />
-        <input type="text" name="author" value={book.author} onChange={handleChange} /><br /><br />
+              <tr>
+                <td>
+                  <label>출판사</label><br />
+                  <input type="text" name="publisher" value={book.publisher} onChange={handleChange} /><br /><br />
+                </td>
+                <td>
+                  <label>발행년도</label><br />
+                  <input type="text" name="publicationDate" value={book.publicationDate} onChange={handleChange} /><br /><br />
+                </td>
+              </tr>
 
-        <label>출판사</label><br />
-        <input type="text" name="publisher" value={book.publisher} onChange={handleChange} /><br /><br />
+              <tr>
+                <td>
+                  <label>청구기호</label><br />
+                  <input type="text" name="callNumber" value={book.callNumber} onChange={handleChange} /><br /><br />
 
-        <label>발행년도</label><br />
-        <input type="text" name="publicationDate" value={book.publicationDate} onChange={handleChange} /><br /><br />
+                </td>
+                <td>
+                  <label>분류 기준</label><br />
+                  <input type="text" name="classificationCriteria" value={book.classificationCriteria} onChange={handleChange} /><br /><br />
 
-        <label>사진 URL</label><br />
-        <input type="text" name="image" value={book.image} onChange={handleChange} /><br /><br />
+                </td>
+              </tr>
 
-        <label>청구기호</label><br />
-        <input type="text" name="callNumber" value={book.callNumber} onChange={handleChange} /><br /><br />
+              <tr><td colspan="2">
+                <label>사진 URL</label><br />
+                <input type="text" name="image" id="image" value={book.image} onChange={handleChange} /><br /><br />
+              </td></tr>
 
-        <label>분류 기준</label><br />
-        <input type="text" name="classificationCriteria" value={book.classificationCriteria} onChange={handleChange} /><br /><br />
+              <tr><td colspan="2">
+                <label>추천 글</label><br />
+                <textarea name="recommendation" value={book.recommendation} onChange={handleChange} /><br /><br />
+              </td></tr>
+            </table>
 
-        <label>추천 글</label><br />
-        <textarea name="recommendation" value={book.recommendation} onChange={handleChange} /><br /><br />
+            <div class="button-container">
+              <button type="submit">추가</button>
+              <button><a href="/">취소</a></button>
+            </div>
 
-        <button type="submit">추가</button>
-        <button>
-          <a href="/">
-            취소
-          </a>
-        </button>
-
-      </form>
-    </div>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 
