@@ -1,0 +1,96 @@
+#detailHeading {
+    text-align: left;
+    margin: 40px 40px 10px 420px;
+}
+
+#detailFirstLine {
+    max-width: 700px;
+    width: 80%;
+    border: none;
+    border-top: 1px solid black;
+    margin-bottom: 50px;
+}
+
+#detailSecondLine {
+    max-width: 700px;
+    width: 80%;
+    border: none;
+    border-top: 2px solid #3194ff;
+}
+
+#detailThirdLine {
+    max-width: 700px;
+    width: 100%;
+    border: none;
+    border-top: 2px solid #bbbbbb;
+}
+
+#detailFourthLine {
+    max-width: 700px;
+    width: 80%;
+    border: none;
+    border-top: 2px solid #bbbbbb;
+    margin-top: 30px;
+}
+
+.detailOuterDiv {
+    max-width: 700px;
+    width: 80%;
+    height: 670px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.detailInnerDiv {
+    width: 100%;
+    padding: 0;
+}
+
+#detailTitleHeader {
+    text-align: center;
+    margin: 10px;
+}
+
+#detailTd {
+    font-weight: bold;
+    padding-right: 50px;
+}
+
+#detailRecom {
+    font-weight: bold;
+    padding: 15px;
+}
+
+#detailImage {
+    display: block;
+    margin: 0 auto;
+    padding-right: 100px;
+}
+
+#detailButtons {
+    padding: 8px 15px;
+    margin: 5px;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#detailButtons:hover {
+    background-color: #cdcdcd;
+}
+
+#detailButtonsLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+#detailButtonsContainer {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

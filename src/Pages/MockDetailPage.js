@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import './MockDetailPage.css';
 
 const MockDetailPage = () => {
     const { title } = useParams();
@@ -38,37 +39,72 @@ const MockDetailPage = () => {
 
     return (
         <div>
-            <h1>도서 디테일</h1>
-            {book ? (
-                <div>
-                    <h3>{book.title}</h3>
-                    <img src={book.image} alt={book.title} width="200" />
-                    <p>
-                         Author:  {book.author}
-                    </p>
-                    <p>
-                         Publisher:  {book.publisher}
-                    </p>
-                    <p>
-                         Published:  {book.publicationDate}
-                    </p>
-                    <p>
-                         Recommendation:  {book.recommendation}
-                    </p>
-                    <p>
-                         Call Number:  {book.callNumber}
-                    </p>
-                    <p>
-                         Classification Criteria:  {book.classificationCriteria}
-                    </p>
+            <h1 id="detailHeading">도서 디테일</h1>
+            <hr id="detailFirstLine"></hr>
+            <hr id="detailSecondLine"></hr>
+            <div class="detailOuterDiv">
+                <div class="detailInnerDiv">
+                    {book ? (
+                        <div>
+                            <table id="detailTable">
+                                <tr>
+                                    <td colspan="4"><h3 id="detailTitleHeader">{book.title}</h3></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">
+                                        <img id="detailImage" src={book.image} alt={book.title} width="200" />
+                                    </td>
+                                    <td id="detailTd">저자</td>
+                                    <td colspan="2">{book.author}</td>
+                                </tr>
+                                <tr>
+                                    <td id="detailTd">출판사</td>
+                                    <td colspan="2">{book.publisher}</td>
+                                </tr>
+                                <tr>
+                                    <td id="detailTd">발행년도</td>
+                                    <td colspan="2">{book.publicationDate}</td>
+                                </tr>
+                                <tr>
+                                    <td id="detailTd">청구기호</td>
+                                    <td colspan="2">{book.callNumber}</td>
+                                </tr>
+                                <tr>
+                                    <td id="detailTd">분류 기준</td>
+                                    <td colspan="2">{book.classificationCriteria}</td>
+                                </tr>
+                                </table>
+                                
+                                <hr id="detailThirdLine"></hr>
+
+                                <table id="detailTable">
+                                <tr>
+                                    <td id="detailRecom" colspan="5">추천 글</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">{book.recommendation}</td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    ) : (
+                        <p>Loading...</p>
+                    )}
                 </div>
-            ) : (
-                <p>Loading...</p>
-            )}
-            <button><Link to={`/mockupdate/${encodeURIComponent(title)}`}>수정</Link></button>
-            <button><Link to="/mocklist">뒤로</Link></button>
+            </div>
+
+            <hr id="detailFourthLine"></hr>
+            <div id="detailButtonsContainer">
+                <button id="detailButtons">
+                    <Link id="detailButtonsLink" to={`/mockupdate/${encodeURIComponent(title)}`}>수정</Link>
+                </button>
+                <button id="detailButtons">
+                    <Link id="detailButtonsLink" to="/mocklist">뒤로</Link>
+                </button>
+            </div>
         </div>
     );
 };
 
 export default MockDetailPage;
+
