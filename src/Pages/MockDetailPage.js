@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import './MockDetailPage.css';
+import "./MockDetailPage.css";
 
 const MockDetailPage = () => {
     const { title } = useParams();
@@ -11,12 +11,14 @@ const MockDetailPage = () => {
         fetch(`https://674853885801f51535905794.mockapi.io/books`)
             .then((response) => {
                 if (!response.ok) {
-                    throw new Error("도서 디테일을 불러오는중 에러사 발생했습니다.");
+                    throw new Error("도서 디테일을 불러오는중 에러가 발생했습니다.");
                 }
                 return response.json();
             })
             .then((data) => {
-                const foundBook = data.find((book) => book.title === decodeURIComponent(title));
+                const foundBook = data.find(
+                    (book) => book.title === decodeURIComponent(title)
+                );
                 if (foundBook) {
                     setBook(foundBook);
                 } else {
@@ -38,68 +40,84 @@ const MockDetailPage = () => {
     }
 
     return (
-        <div>
+        <div id="DetailContainerBox">
             <h1 id="detailHeading">도서 디테일</h1>
             <hr id="detailFirstLine"></hr>
-            <hr id="detailSecondLine"></hr>
-            <div class="detailOuterDiv">
-                <div class="detailInnerDiv">
-                    {book ? (
-                        <div>
-                            <table id="detailTable">
-                                <tr>
-                                    <td colspan="4"><h3 id="detailTitleHeader">{book.title}</h3></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="5">
-                                        <img id="detailImage" src={book.image} alt={book.title} width="200" />
-                                    </td>
-                                    <td id="detailTd">저자</td>
-                                    <td colspan="2">{book.author}</td>
-                                </tr>
-                                <tr>
-                                    <td id="detailTd">출판사</td>
-                                    <td colspan="2">{book.publisher}</td>
-                                </tr>
-                                <tr>
-                                    <td id="detailTd">발행년도</td>
-                                    <td colspan="2">{book.publicationDate}</td>
-                                </tr>
-                                <tr>
-                                    <td id="detailTd">청구기호</td>
-                                    <td colspan="2">{book.callNumber}</td>
-                                </tr>
-                                <tr>
-                                    <td id="detailTd">분류 기준</td>
-                                    <td colspan="2">{book.classificationCriteria}</td>
-                                </tr>
-                                </table>
-                                
-                                <hr id="detailThirdLine"></hr>
+            <div className="detailColumnFull">
+                {book ? ( // book이 존재할 때만 렌더링
+                    <>
+                        <h3 id="detailTitleHeader">{book.title}</h3>
+                        <hr id="detailSecondLine"></hr>
+                    </>
+                ) : (
+                    <p>Loading...</p>
+                )}
+            </div>
 
-                                <table id="detailTable">
-                                <tr>
-                                    <td id="detailRecom" colspan="5">추천 글</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="5">{book.recommendation}</td>
-                                </tr>
-                            </table>
-
+            <div className="detailInnerDiv">
+                {book ? (
+                    <div>
+                        <div className="detailRow">
+                            <div className="detailImageContainer">
+                                <img
+                                    id="detailImage"
+                                    src={book.image}
+                                    alt={book.title}
+                                    width="200"
+                                />
+                            </div>
+                            <div className="detailTextContainer">
+                                <div className="detailTextRow">
+                                    <span className="detailLabel">저자 : </span>
+                                    <span className="detailValue">{book.author}</span>
+                                </div>
+                                <div className="detailTextRow">
+                                    <span className="detailLabel">출판사 : </span>
+                                    <span className="detailValue">{book.publisher}</span>
+                                </div>
+                                <div className="detailTextRow">
+                                    <span className="detailLabel">발행년도 : </span>
+                                    <span className="detailValue">{book.publicationDate}</span>
+                                </div>
+                                <div className="detailTextRow">
+                                    <span className="detailLabel">청구기호 : </span>
+                                    <span className="detailValue">{book.callNumber}</span>
+                                </div>
+                                <div className="detailTextRow">
+                                    <span className="detailLabel">분류 기준 : </span>
+                                    <span className="detailValue">
+                                        {book.classificationCriteria}
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    ) : (
-                        <p>Loading...</p>
-                    )}
-                </div>
+
+                        <hr id="detailThirdLine"></hr>
+
+                        <div className="detailRecommendation">
+                            <h4 className="detailRecomHeader">추천 글</h4>
+                            <p className="detailRecomText">{book.recommendation}</p>
+                        </div>
+                    </div>
+                ) : (
+                    <p>Loading...</p>
+                )}
             </div>
 
             <hr id="detailFourthLine"></hr>
             <div id="detailButtonsContainer">
                 <button id="detailButtons">
-                    <Link id="detailButtonsLink" to={`/mockupdate/${encodeURIComponent(title)}`}>수정</Link>
+                    <Link
+                        id="detailButtonsLink"
+                        to={`/mockupdate/${encodeURIComponent(title)}`}
+                    >
+                        수정
+                    </Link>
                 </button>
                 <button id="detailButtons">
-                    <Link id="detailButtonsLink" to="/mocklist">뒤로</Link>
+                    <Link id="detailButtonsLink" to="/mocklist">
+                        뒤로
+                    </Link>
                 </button>
             </div>
         </div>
@@ -107,4 +125,3 @@ const MockDetailPage = () => {
 };
 
 export default MockDetailPage;
-

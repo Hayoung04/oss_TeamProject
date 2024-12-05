@@ -1,39 +1,71 @@
 .addOuterDiv {
     max-width: 600px;
-    width: 80%;
-    height: 650px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
     border: 5px solid #efcb00;
     border-radius: 10px;
-    font-size: large;
-}
-
-.addInnerDiv {
-    width: 100%;
-    padding: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
 }
 
 #addHeading {
     text-align: center;
-    text-align: center;
-    margin: 40px;
+    font-weight: bold;
 }
 
-#addCancelButton {
-    text-decoration: none;
-    color: inherit;
+.formRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.button-container {
+.formGroup {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.addLabel {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.addLabelRecommend {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    display: block;
+}
+
+.addInput,
+.addTextarea {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.addTextareaRecommend {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    width: 535px;
+    max-width: 535px;
+}
+
+.addTextarea {
+    height: 80px;
+}
+
+.buttonContainer {
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin-top: 20px;
 }
 
-#addButtons {
+.addButton {
     padding: 8px 15px;
     font-size: medium;
     border: none;
@@ -41,42 +73,11 @@
     cursor: pointer;
 }
 
-#addButtons:hover {
+.addCancelButton {
+    text-decoration: none;
+    color: inherit;
+}
+
+.addButton:hover {
     background-color: #cdcdcd;
-}
-
-#addTable {
-    margin: auto;
-}
-
-#addTd {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-}
-
-#addLabel {
-    display: inline-block;
-    margin-bottom: 7px;
-    font-size: larger;
-}
-
-#addInput {
-    width: 200px;
-    height: 25px;
-    font-size: large;
-}
-
-input#addImage {
-    width: 470px;
-    height: 25px;
-    font-size: large;
-}
-
-#addTextarea {
-    width: 470px;
-    height: 60px;
-    resize: vertical;
-    overflow: auto;
-    font-size: large;
 }

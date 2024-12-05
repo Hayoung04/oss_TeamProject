@@ -1,74 +1,35 @@
-#detailHeading {
-    text-align: left;
-    margin: 40px 40px 10px 420px;
+#DetailContainerBox {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #detailFirstLine {
-    max-width: 700px;
-    width: 80%;
-    border: none;
-    border-top: 1px solid black;
-    margin-bottom: 50px;
+    border: 1px solid black;
 }
 
 #detailSecondLine {
-    max-width: 700px;
-    width: 80%;
-    border: none;
-    border-top: 2px solid #3194ff;
+    border: 2px solid #5bade2;
 }
 
-#detailThirdLine {
-    max-width: 700px;
-    width: 100%;
-    border: none;
-    border-top: 2px solid #bbbbbb;
-}
-
-#detailFourthLine {
-    max-width: 700px;
-    width: 80%;
-    border: none;
-    border-top: 2px solid #bbbbbb;
-    margin-top: 30px;
-}
-
-.detailOuterDiv {
-    max-width: 700px;
-    width: 80%;
-    height: 670px;
-    margin: 0 auto;
+.detailRow {
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    font-size: large;
 }
 
-.detailInnerDiv {
-    width: 100%;
-    padding: 0;
+.detailImageContainer {
+    margin-right: 20px;
 }
 
-#detailTitleHeader {
-    text-align: center;
-    margin: 10px;
+.detailTextContainer {
+    font-size: 16px;
 }
 
-#detailTd {
+.detailLabel {
     font-weight: bold;
-    padding-right: 50px;
 }
 
-#detailRecom {
-    font-weight: bold;
-    padding: 15px;
-}
-
-#detailImage {
-    display: block;
-    margin: 0 auto;
-    padding-right: 100px;
+.detailTextRow {
+    margin-bottom: 10px;
 }
 
 #detailButtons {
