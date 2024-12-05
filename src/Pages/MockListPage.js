@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "./MockListPage.css";
 
 const ShowList = () => {
   const [books, setBooks] = useState([]);
@@ -15,13 +16,33 @@ const ShowList = () => {
 };
 
 const MockListPage = ({ books }) => {
+  const location = useLocation();
+
   if (!books || books.length === 0) {
     return <p>No books available.</p>;
   }
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <a href="/mockadd"><button>Add</button></a>
+    <div style={{ textAlign: "center" }}>
+      <div className="section2">
+        <div
+          className={`tab2 ${
+            location.pathname === "/" ? "active" : "inactive"
+          }`}
+        >
+          <Link to="/">도서 목록</Link>
+        </div>
+        <div
+          className={`tab2 ${
+            location.pathname === "/apilist" ? "active" : "inactive"
+          }`}
+        >
+          <Link to="/apilist">도서관 강좌</Link>
+        </div>
+      </div>
+      <a href="/mockadd">
+        <button>Add</button>
+      </a>
       <h1>Book List</h1>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {books.map((book) => (
