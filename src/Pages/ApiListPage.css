@@ -15,6 +15,11 @@
   color: #243f72;
 }
 
+.tab a {
+  text-decoration: none;
+  color: #243f72;
+}
+
 .tab.active {
   border: 1px solid #243f72;
   border-bottom: 1px solid white;
