@@ -32,3 +32,79 @@
   border: 1px solid #ddd;
   background: #f7f7f7;
 }
+.container {
+  text-align: left;
+}
+
+.detailRow {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.detailImageContainer {
+  padding: 20px 30px;
+  flex-shrink: 0;
+}
+
+.detailTextContainer {
+  flex-grow: 1;
+  text-align: left; 
+}
+
+.detailTextRow {
+  margin-bottom: 10px;
+}
+
+.detailLabel {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* 추가 버튼 */
+.add-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+/* 삭제 버튼 */
+.delete-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #ff1a1a;
+}
+
+.book-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+h6 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #243f72;
+  margin-bottom: 10px;
+}
