@@ -31,7 +31,6 @@ const ShowList = () => {
           console.error("Error deleting book:", error);
           alert("에러가 발생했습니다.");
         });
-      
     }
   };
 
@@ -64,21 +63,23 @@ const MockListPage = ({ books, onDelete }) => {
         </div>
       </div>
       <a href="/mockadd">
-        <button className="add-button">Add</button>
+        <button className="addButton2">Add</button>
       </a>
-      <div className="book_intro">
+      <div className="bookIntro">
         <h1>Book List</h1>
-        <ul className="List">
+        <div className="List">
           {books.map((book) => (
-            <li key={book.id} className="book-item">
+            <div key={book.id} className="bookItem">
               <div className="detailRow">
                 <div className="detailImageContainer">
-                  <img
-                    id="detailImage"
-                    src={book.image}
-                    alt={book.title}
-                    width="200"
-                  />
+                  <Link to={`/mockdetail/${encodeURIComponent(book.title)}`}>
+                    <img
+                      id="detailImage"
+                      src={book.image}
+                      alt={book.title}
+                      width="200"
+                    />
+                  </Link>
                 </div>
                 <div className="detailTextContainer">
                   <Link to={`/mockdetail/${encodeURIComponent(book.title)}`}>
@@ -99,14 +100,14 @@ const MockListPage = ({ books, onDelete }) => {
                 </div>
               </div>
               <button
-                className="delete-button"
+                className="deleteButton"
                 onClick={() => onDelete(book.id)}
               >
                 삭제
               </button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
