@@ -1,4 +1,45 @@
 .detailContainer {
   padding: 20px;
   font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.wrap{
+  padding-left:20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.title { 
+  padding-left: 30px;
+  margin: 30px 0 15px 0;
+  font-size: 23px;
+  color: #222;
+  line-height: 1.4;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  font-weight: bold;
+}
+
+tr,td,th{
+  padding: 15px;
+  word-break: break-all;
+  border: 1px solid #e5e8eb;
+  vertical-align: middle;
+}
+
+.detail{
+  padding: 20px 0px 20px 0px;
+  text-align: center;
+}
+
+div{
+  text-align: center;
+}
+
+table{
+  text-align: center;
+  margin: 0 auto;
+  border-collapse: collapse;
 }
