@@ -106,11 +106,20 @@
 h6 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #243f72;
+  color: black;
   margin-bottom: 10px;
   text-decoration: none;
 }
 
 .bookIntro {
   margin: 20px;
+}
+
+.detailTextContainer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.detailTextContainer a:hover {
+  text-decoration: underline;
 }

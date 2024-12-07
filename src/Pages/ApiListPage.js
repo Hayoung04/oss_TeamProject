@@ -19,7 +19,7 @@ const ApiListPage = () => {
     const fetchInitialData = async () => {
       try {
         const response = await axios.get(
-          `http://openapi.seoul.go.kr:8088/6941464777676b6433336c77696e71/xml/SeoulLibraryLectureInfo/1/100/`,
+          `http://openapi.seoul.go.kr:8088/6941464777676b6433336c77696e71/xml/SeoulLibraryLectureInfo/5/105/`,
           { responseType: "document" }
         );
         const xml = response.data;

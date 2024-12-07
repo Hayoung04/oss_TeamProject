@@ -22,34 +22,51 @@ const ApiDetailPage = () => {
               <col width="20%" className="col3"></col>
               <col width="30%" className="col4"></col>
             </colgroup>
-          <tbody>
-            <tr>
-              <th className="item"><strong>대상</strong></th>
-              <td colspan="3">{lecture.target}</td>
-            </tr>
-            <tr>
-              <th className="item"><strong>기간</strong></th>
-              <td colspan="3"> {lecture.startDate} ~ {lecture.endDate}</td>
-            </tr>
-            <tr>
-              <th className="item"><strong>장소</strong></th>
-              <td colspan="3"> {lecture.place}</td>
-            </tr>
-            <tr>
-              <th className="item"><strong>모집 인원</strong></th>
-              <td colspan="3"> {lecture.person}명</td>
-            </tr>
-            <tr>
-              <th className="item"><strong>모집 방법</strong></th>
-              <td colspan="3"> {lecture.method}</td>
-            </tr>
-          </tbody>
-        </table>
+            <tbody>
+              <tr>
+                <th className="item">
+                  <strong>대상</strong>
+                </th>
+                <td colspan="3">{lecture.target}</td>
+              </tr>
+              <tr>
+                <th className="item">
+                  <strong>기간</strong>
+                </th>
+                <td colspan="3">
+                  {" "}
+                  {lecture.startDate} ~ {lecture.endDate}
+                </td>
+              </tr>
+              <tr>
+                <th className="item">
+                  <strong>장소</strong>
+                </th>
+                <td colspan="3"> {lecture.place}</td>
+              </tr>
+              <tr>
+                <th className="item">
+                  <strong>모집 인원</strong>
+                </th>
+                <td colspan="3"> {lecture.person}명</td>
+              </tr>
+              <tr>
+                <th className="item">
+                  <strong>모집 방법</strong>
+                </th>
+                <td colspan="3"> {lecture.method}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <p>
-          <strong>강좌 내용:</strong>
+          <strong>
+            강좌 내용 (해당 강좌 내용은 open api에서 css와 함께 제공하는
+            정보입니다.)
+          </strong>
         </p>
         <div
+          id="discription"
           dangerouslySetInnerHTML={{
             __html: lecture.description,
           }}
