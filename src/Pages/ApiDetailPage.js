@@ -13,6 +13,8 @@ const ApiDetailPage = () => {
   return (
     <div className="wrap">
       <div className="detailContainer">
+        <h1 id="detailHeading">Book Detail</h1>
+        <hr id="detailFirstLine"></hr>
         <h3 className="title">{lecture.title}</h3>
         <div class="detail">
           <table class="info" id="table" summary="강의 상세내용입니다">
@@ -60,10 +62,8 @@ const ApiDetailPage = () => {
           </table>
         </div>
         <p>
-          <strong>
-            강좌 내용 (해당 강좌 내용은 open api에서 css와 함께 제공하는
-            정보입니다.)
-          </strong>
+          <strong>강좌 내용</strong>
+          <p>(해당 강좌 내용은 open api에서 css와 함께 제공하는 정보입니다.)</p>
         </p>
         <div
           id="discription"
