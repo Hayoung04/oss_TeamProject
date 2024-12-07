@@ -41,7 +41,7 @@ const MockDetailPage = () => {
 
   return (
     <div id="DetailContainerBox">
-      <h1 id="detailHeading">도서 디테일</h1>
+      <h1 id="detailHeading">Book Detail</h1>
       <hr id="detailFirstLine"></hr>
       <div className="detailColumnFull">
         {book ? (
