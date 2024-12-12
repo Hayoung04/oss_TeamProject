@@ -66,18 +66,27 @@
   top: 36px;
   right: 20px;
   padding: 8px 15px;
+  margin-right: 70px;
+  cursor: pointer;
+}
+
+/* .addButton2 {
+  position: absolute;
+  top: 36px;
+  right: 20px;
+  padding: 8px 15px;
   font-size: medium;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   background: #243f72;
   color: white;
-}
+} */
 
-.addButton2:hover {
+/* .addButton2:hover {
   background-color: #cdcdcd;
   color: black;
-}
+} */
 
 .deleteButton {
   position: absolute;

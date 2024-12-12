@@ -63,7 +63,7 @@ const MockListPage = ({ books, onDelete }) => {
         </div>
       </div>
       <a href="/mockadd">
-        <button className="addButton2">Add</button>
+        <button className="addButton2 btn btn-primary">Add</button>
       </a>
       <div className="bookIntro">
         <h1>Book List</h1>
