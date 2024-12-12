@@ -45,7 +45,7 @@ const MockListPage = ({ books, onDelete }) => {
   }
 
   return (
-    <div className="container">
+    <div className="mockListContainer">
       <div className="section2">
         <div
           className={`tab2 ${
@@ -63,7 +63,7 @@ const MockListPage = ({ books, onDelete }) => {
         </div>
       </div>
       <a href="/mockadd">
-        <button className="addButton2 btn btn-primary">추가</button>
+        <button className="addButton2 btn btn-outline-primary">추가</button>
       </a>
       <div className="bookIntro">
         <h1>Book List</h1>
@@ -100,7 +100,7 @@ const MockListPage = ({ books, onDelete }) => {
                 </div>
               </div>
               <button
-                className="deleteButton btn btn-danger"
+                className="deleteButton btn btn-outline-danger"
                 onClick={() => onDelete(book.id)}
               >
                 삭제

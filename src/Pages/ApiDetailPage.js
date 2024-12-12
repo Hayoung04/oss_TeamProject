@@ -24,15 +24,15 @@ const ApiDetailPage = () => {
               <col width="20%" className="col3"></col>
               <col width="30%" className="col4"></col>
             </colgroup>
-            <tbody>
-              <tr>
-                <th className="item">
+            <tbody id="apiTbody">
+              <tr id="apiTr">
+                <th className="item" id="apiTh">
                   <strong>대상</strong>
                 </th>
                 <td colspan="3">{lecture.target}</td>
               </tr>
               <tr>
-                <th className="item">
+                <th className="item" id="apiTh">
                   <strong>기간</strong>
                 </th>
                 <td colspan="3">
@@ -41,19 +41,25 @@ const ApiDetailPage = () => {
                 </td>
               </tr>
               <tr>
-                <th className="item">
+                <th className="item" id="apiTh">
                   <strong>장소</strong>
                 </th>
-                <td colspan="3"> {lecture.place}</td>
+                <td colspan="3" id="apiTh">
+                  {" "}
+                  {lecture.place}
+                </td>
               </tr>
               <tr>
-                <th className="item">
+                <th className="item" id="apiTh">
                   <strong>모집 인원</strong>
                 </th>
-                <td colspan="3"> {lecture.person}명</td>
+                <td colspan="3" id="apiTh">
+                  {" "}
+                  {lecture.person}명
+                </td>
               </tr>
               <tr>
-                <th className="item">
+                <th className="item" id="apiTh">
                   <strong>모집 방법</strong>
                 </th>
                 <td colspan="3"> {lecture.method}</td>
@@ -61,9 +67,12 @@ const ApiDetailPage = () => {
             </tbody>
           </table>
         </div>
-        <p>
-          <strong>강좌 내용</strong>
-          <p>(해당 강좌 내용은 open api에서 css와 함께 제공하는 정보입니다.)</p>
+        <p id="lectureApi">
+          <strong>강좌 내용 </strong>
+          <p>
+            {" "}
+            (해당 강좌 내용은 open api에서 css와 함께 제공하는 정보입니다.)
+          </p>
         </p>
         <div
           id="discription"

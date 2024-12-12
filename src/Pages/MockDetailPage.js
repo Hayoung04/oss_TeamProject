@@ -47,7 +47,7 @@ const MockDetailPage = () => {
         {book ? (
           <>
             <h3 id="detailTitleHeader">{book.title}</h3>
-            <hr id="detailSecondLine"></hr>
+            <div id="detailSecondLine"></div>
           </>
         ) : (
           <p>Loading...</p>
@@ -106,7 +106,7 @@ const MockDetailPage = () => {
 
       <hr id="detailFourthLine"></hr>
       <div id="detailButtonsContainer">
-        <button className="btn btn-light" id="detailButtons">
+        <button className="btn btn-outline-dark" id="detailButtons">
           <Link
             id="detailButtonsLink"
             to={`/mockupdate/${encodeURIComponent(title)}`}
@@ -114,7 +114,7 @@ const MockDetailPage = () => {
             수정
           </Link>
         </button>
-        <button className="btn btn-light" id="detailButtons">
+        <button className="btn btn-outline-dark" id="detailButtons">
           <Link id="detailButtonsLink" to="/mocklist">
             뒤로
           </Link>

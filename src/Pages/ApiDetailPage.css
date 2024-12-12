@@ -1,7 +1,23 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SBAggroB";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 .detailContainer {
   padding: 20px;
   font-family: Arial, sans-serif;
   text-align: center;
+  font-family: "Pretendard-Regular";
 }
 
 .wrap {
@@ -44,7 +60,26 @@ table {
 }
 
 #discription {
-  border: 3px solid #5bade2;
+  border: 1px solid gray;
   border-radius: 5px;
   padding: 30px;
+}
+
+#apiTbody {
+  border: 3px solid #5bade2;
+}
+
+#apiTr {
+  border: 3px solid #5bade2;
+}
+
+#apiTh {
+  border: 3px solid #5bade2;
+}
+
+#lectureApi {
+  margin-top: 30px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
 }
