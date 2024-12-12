@@ -150,10 +150,10 @@ const MockUpdatePage = () => {
           </div>
 
           <div className="buttonContainer">
-            <button className="addButton" type="submit">
+            <button className="addButton btn btn-light" type="submit">
               수정
             </button>
-            <button className="addButton">
+            <button className="addButton btn btn-light">
               <a className="addCancelButton" href="/">
                 취소
               </a>

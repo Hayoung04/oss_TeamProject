@@ -64,20 +64,3 @@
     gap: 10px;
     margin-top: 20px;
 }
-
-.addButton {
-    padding: 8px 15px;
-    font-size: medium;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.addCancelButton {
-    text-decoration: none;
-    color: inherit;
-}
-
-.addButton:hover {
-    background-color: #cdcdcd;
-}
