@@ -65,7 +65,6 @@
   position: absolute;
   top: 36px;
   right: 20px;
-  padding: 8px 15px;
   margin-right: 70px;
   cursor: pointer;
 }
@@ -81,14 +80,21 @@
   cursor: pointer;
   background: #243f72;
   color: white;
-} */
+}
 
-/* .addButton2:hover {
+.addButton2:hover {
   background-color: #cdcdcd;
   color: black;
 } */
 
 .deleteButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* .deleteButton {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -102,7 +108,7 @@
 
 .deleteButton:hover {
   background-color: #ff1a1a;
-}
+} */
 
 .bookItem {
   position: relative;
