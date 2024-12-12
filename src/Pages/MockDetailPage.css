@@ -32,26 +32,14 @@
     margin-bottom: 10px;
 }
 
-#detailButtons {
-    padding: 8px 15px;
-    margin: 5px;
-    font-size: medium;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#detailButtons:hover {
-    background-color: #cdcdcd;
-}
-
 #detailButtonsLink {
     text-decoration: none;
     color: inherit;
 }
 
 #detailButtonsContainer {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
     margin-top: 20px;
-    margin-bottom: 20px;
 }
