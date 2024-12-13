@@ -13,7 +13,7 @@ const ApiDetailPage = () => {
   return (
     <div className="wrap">
       <div className="detailContainer">
-        <h1 id="detailHeading">Book Detail</h1>
+        <h1 id="detailHeading">Course Details</h1>
         <hr id="detailFirstLine"></hr>
         <h3 className="title">{lecture.title}</h3>
         <div class="detail">
