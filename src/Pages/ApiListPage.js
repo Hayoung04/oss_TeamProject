@@ -119,7 +119,7 @@ const ApiListPage = () => {
           <Link to="/apilist">도서관 강좌</Link>
         </div>
       </div>
-      <div className="boxContainer">
+      <div id="boxContainer">
         <Search onSearch={handleSearch} />
         <div className="filterContainer">
           <div className="person">

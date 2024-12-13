@@ -30,7 +30,10 @@ const List = ({ lectures }) => {
               className="lectureCard"
               onClick={() => handleLectureClick(lecture)}
             >
-              <h2>{lecture.title}</h2>
+              <h2>
+                <strong>{lecture.title}</strong>
+              </h2>
+
               <div>
                 <p>
                   <strong>기간:</strong> {lecture.startDate} ~ {lecture.endDate}
